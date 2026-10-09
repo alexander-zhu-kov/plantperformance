@@ -23,10 +23,22 @@
 <nav class="nav" aria-label="Разделы сайта"><a href="zavod-v-cifrah/">Завод в цифрах</a><a href="plan-fakt/">План-факт</a><a href="dokumenty/">Документы завода</a><a href="#skachat">Скачать</a><a href="#svyaz">Связаться</a></nav>
 </div></header>
 <main>
-<section class="hero"><div class="wrap">
+<section class="hero hv"><div class="wrap">
+<div class="hv-grid">
 <h1>Отклонение от плана должно заканчиваться действием</h1>
-<p class="lead">Plant Performance — две программы и комплекты документов для управления заводом. Программы показывают, где завод отстаёт от цели, и ведут каждое отклонение до причины, ответственного и результата. Документы задают правила, по которым это работает.</p>
-<div class="actions"><a class="btn primary" href="#rolik">Посмотреть ролик, 60 секунд</a><a class="btn ghost" href="#skachat">Скачать презентацию и документы</a></div>
+<div class="hv-player">
+<div class="frame pl"><video id="pv" controls muted autoplay playsinline preload="metadata" poster="video/poster.webp" src="video/zavod-v-cifrah-60s.mp4">Ваш браузер не показывает видео. <a href="video/zavod-v-cifrah-60s.mp4">Скачать ролик</a>.</video>
+<button type="button" class="snd" id="snd" hidden>🔊 Включить звук</button></div>
+<ol class="clips" id="clips">
+<li><button type="button" aria-current="true" data-src="video/zavod-v-cifrah-60s.mp4" data-poster="video/poster.webp"><i>1</i><span><b>Программа за 60 секунд</b><em>От файлов Excel до совещания по показателям · 1:00</em></span></button></li>
+<li><button type="button" aria-current="false" data-src="video/zavod-pnl-riski.mp4" data-poster="video/poster-pnl-riski.webp"><i>2</i><span><b>P&amp;L и оценка рисков</b><em>ИИ-отчёт по прибылям и убыткам и рискам плана · 0:51</em></span></button></li>
+<li><button type="button" aria-current="false" data-src="video/zavod-ii-otchet.mp4" data-poster="video/poster-ii-otchet.webp"><i>3</i><span><b>Отчёт для директора за минуту</b><em>ИИ пишет текст для планёрки, числа считает программа · 1:33</em></span></button></li>
+</ol>
+<p class="chain-cap">Без озвучки, с титрами. Условные данные. Ролики идут подряд.</p>
+</div>
+<p class="lead">Две программы и комплекты документов для управления заводом: показывают, где завод отстаёт от цели, и ведут каждое отклонение до причины, ответственного и результата.</p>
+<div class="actions"><a class="btn primary" href="#skachat">Скачать презентацию и документы</a><a class="btn ghost" href="zavod-v-cifrah/">О программе «Завод в цифрах»</a></div>
+</div>
 <ol class="chain" aria-label="Пример: как отклонение доводится до результата">
 <li><span class="step">1. Показатель</span><span class="val">Доля брака</span><span class="note">август, цех формовки</span></li>
 <li><span class="step">2. Цель</span><span class="val">2,0%</span><span class="note">допуск до 2,3%</span></li>
@@ -38,19 +50,21 @@
 <p class="chain-cap">Условный пример. Так выглядит разбор одного показателя в программе «Завод в цифрах».</p>
 </div></section>
 
-<section class="band" id="rolik"><div class="wrap">
-<div class="head"><h2>«Завод в цифрах» за минуту</h2>
-<p class="lead">От файлов Excel, которые завод уже ведёт, до совещания по показателям. Ролик без озвучки, с титрами.</p></div>
-<div class="frame"><video controls preload="none" poster="video/poster.webp">
-<source src="video/zavod-v-cifrah-60s.mp4" type="video/mp4">
-Ваш браузер не показывает видео. <a href="video/zavod-v-cifrah-60s.mp4">Скачать ролик</a>.
-</video></div>
+<section class="band" id="ii"><div class="wrap">
+<div class="head"><h2>ИИ-ассистент аналитика — новое в версии 0.5.6</h2>
+<p class="lead">Директор выбирает период и показатели, ассистент пишет текст отчёта для планёрки. Числа считает программа, модель только описывает готовую таблицу, решение остаётся за человеком.</p></div>
+<ul class="plain">
+<li>Отчёт по P&amp;L и оценка рисков — по просьбе директора своими словами</li>
+<li>Числа в тексте, которых нет в таблице программы, подсвечиваются как возможная выдумка</li>
+<li>Видно, что именно ушло в модель; по умолчанию ассистент выключен</li>
+</ul>
+<div class="actions"><button type="button" class="btn primary" data-clip="2">▶ Смотреть: отчёт для директора, 93 с</button><button type="button" class="btn ghost" data-clip="1">▶ P&amp;L и риски, 51 с</button><a class="btn ghost" href="zavod-v-cifrah/#ii">Как работает ассистент</a></div>
 </div></section>
 
 <section><div class="wrap">
 <div class="split">
 <div>
-<p class="ver">Программа для Windows и Mac, версия 0.5</p>
+<p class="ver">Программа для Windows и Mac, версия 0.5.6</p>
 <h2>Завод в цифрах</h2>
 <p>Производство, качество, деньги и люди на одном экране и в одной логике. Программа читает файлы Excel завода как есть: план-факт, журналы ОТК и простоев, бюджет, кадровый файл.</p>
 <ul class="plain">
@@ -58,6 +72,7 @@
 <li>По показателю вне цели — три главные причины, действие, ответственный и срок</li>
 <li>P&amp;L по месяцам: факт к бюджету, EBITDA, чистая прибыль</li>
 <li>Персонал: численность, текучесть, выработка, доля ФОТ в выручке</li>
+<li>ИИ-ассистент: текст отчёта для планёрки, числа считает программа</li>
 </ul>
 <p style="margin-top:18px"><a class="more" href="zavod-v-cifrah/">Подробнее о «Заводе в цифрах»</a></p>
 </div>
@@ -111,6 +126,8 @@
 <ul class="files">
 <li><span class="t">Презентация Plant Performance<span class="d">PDF, 9 слайдов: обе программы и комплекты документов</span></span><a class="dl" href="files/plant-performance-prezentaciya.pdf" download>Скачать PDF</a></li>
 <li><span class="t">Ролик «Завод в цифрах»<span class="d">MP4, 60 секунд, без звука можно смотреть — титры на экране</span></span><a class="dl" href="video/zavod-v-cifrah-60s.mp4" download>Скачать MP4</a></li>
+<li><span class="t">Ролик «ИИ-ассистент: P&amp;L и риски»<span class="d">MP4, 51 секунда, условные данные</span></span><a class="dl" href="video/zavod-pnl-riski.mp4" download>Скачать MP4</a></li>
+<li><span class="t">Ролик «ИИ-ассистент: отчёт для директора»<span class="d">MP4, 93 секунды, условные данные</span></span><a class="dl" href="video/zavod-ii-otchet.mp4" download>Скачать MP4</a></li>
 </ul>
 <div class="cols" style="margin-top:44px">
 <div><h3>Документы: завод ЖБИ</h3><ul class="files">
@@ -125,7 +142,22 @@
 </ul></div>
 </div>
 </div></section>
-
+<script>
+(function(){var v=document.getElementById('pv');if(!v)return;
+var b=[].slice.call(document.querySelectorAll('#clips button')),snd=document.getElementById('snd'),i=0;
+function mark(){b.forEach(function(x,k){x.setAttribute('aria-current',k===i?'true':'false')});}
+function go(n,user){i=n;var c=b[n];v.poster=c.getAttribute('data-poster');v.src=c.getAttribute('data-src');mark();
+ if(user){v.muted=false;}
+ var p=v.play();if(p&&p.catch)p.catch(function(){});}
+b.forEach(function(x,k){x.addEventListener('click',function(){go(k,true);});});
+v.addEventListener('ended',function(){if(i<b.length-1){go(i+1,false);}});
+function upd(){if(snd)snd.hidden=!(v.muted&&!v.paused);}
+v.addEventListener('play',upd);v.addEventListener('pause',upd);v.addEventListener('volumechange',upd);
+if(snd)snd.addEventListener('click',function(){v.muted=false;upd();});
+[].forEach.call(document.querySelectorAll('[data-clip]'),function(el){el.addEventListener('click',function(){
+ var n=parseInt(el.getAttribute('data-clip'),10);go(n,true);v.scrollIntoView({behavior:'smooth',block:'center'});});});
+})();
+</script>
 <section class="contact" id="svyaz"><div class="wrap">
 <h2>Напишите нам</h2>
 <p class="lead" style="color:#DCE8EA;margin-top:14px">Расскажите в двух строках, что за завод и что хотите посмотреть. Ответим, покажем программу в работе и пришлём документы, которых нет на сайте.</p>

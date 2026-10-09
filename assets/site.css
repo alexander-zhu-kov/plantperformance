@@ -138,3 +138,40 @@ footer{padding:26px 0 40px;font-size:14.5px;color:var(--muted)}
 footer .wrap{display:flex;justify-content:space-between;gap:12px 24px;flex-wrap:wrap}
 .crumb{font-size:15px;margin-bottom:18px}
 .crumb a{text-decoration:none}
+
+.vgrid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px}
+.vgrid figure{margin:0}
+.vgrid figcaption{margin-top:8px;font-size:15px;line-height:1.4}
+.vgrid figcaption span{display:block;color:var(--muted);font-size:14px;margin-top:2px}
+@media (max-width:760px){.vgrid{grid-template-columns:minmax(0,1fr)}}
+
+/* первый экран с плеером */
+.hero.hv{padding:44px 0 48px}
+.hv-grid{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);column-gap:44px;grid-template-rows:auto auto 1fr;align-items:start}
+.hv-grid > h1{grid-column:1;grid-row:1;max-width:none;font-size:clamp(30px,3.4vw,44px);line-height:1.12}
+.hv-grid > .lead{grid-column:1;grid-row:2;margin-top:20px}
+.hv-grid > .actions{grid-column:1;grid-row:3;align-self:start}
+.hv-player{grid-column:2;grid-row:1 / span 3}
+.frame.pl{position:relative;aspect-ratio:16/9;background:#0b1a20}
+.frame.pl video{width:100%;height:100%;object-fit:contain}
+.snd{position:absolute;left:12px;bottom:56px;border:0;border-radius:999px;padding:9px 16px;font:600 15px/1 inherit;font-family:inherit;background:#E0A526;color:#14222A;cursor:pointer;box-shadow:0 4px 14px rgba(0,0,0,.35)}
+.snd[hidden]{display:none}
+.clips{list-style:none;margin:12px 0 0;padding:0;display:grid;gap:8px}
+.clips button{width:100%;display:flex;gap:12px;align-items:center;text-align:left;font:inherit;font-family:inherit;color:var(--ink);background:var(--surface);border:1.5px solid var(--line);border-radius:8px;padding:10px 14px;cursor:pointer;min-height:56px}
+.clips button:hover{border-color:var(--petrol)}
+.clips button[aria-current="true"]{border-color:var(--petrol);background:#E3ECEC}
+.clips i{flex:none;width:30px;height:30px;border-radius:50%;background:var(--petrol);color:#fff;font-style:normal;font-weight:700;display:flex;align-items:center;justify-content:center;font-size:15px}
+.clips button[aria-current="true"] i{background:#E0A526;color:#14222A}
+.clips b{display:block;font-size:16px;line-height:1.25}
+.clips em{display:block;font-style:normal;font-size:14px;color:var(--muted);line-height:1.35;margin-top:2px}
+@media (max-width:860px){
+  .hero.hv{padding:26px 0 36px}
+  .hv-grid{display:block}
+  .hv-grid > h1{font-size:28px}
+  .hv-player{margin-top:16px}
+  .hv-grid > .lead{margin-top:18px}
+  .hv-grid > .actions{margin-top:20px}
+  .snd{bottom:50px}
+}
+button.btn{font-family:inherit;cursor:pointer;background:transparent}
+button.btn.primary{background:var(--petrol)}
