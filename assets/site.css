@@ -181,3 +181,53 @@ footer .wrap{display:flex;justify-content:space-between;gap:12px 24px;flex-wrap:
 }
 button.btn{font-family:inherit;cursor:pointer;background:transparent}
 button.btn.primary{background:var(--petrol)}
+
+/* --- 09.10: Telegram, карточки продуктов, «Для кого» --- */
+.nav{align-items:center}
+.nav a.tg{display:inline-flex;align-items:center;gap:6px;background:var(--petrol);color:#fff;padding:7px 14px;border-radius:999px;font-weight:600;border-bottom:0}
+.nav a.tg:hover{background:var(--petrol-dark);color:#fff}
+.tgbtn{display:inline-flex;align-items:center;gap:8px}
+.tag{font-size:13px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:var(--petrol);margin:0 0 10px}
+.hero .tag{margin-bottom:12px}
+
+.pcards{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:22px}
+.pcard{display:flex;flex-direction:column;background:var(--paper);border:1px solid var(--line);border-radius:10px;overflow:hidden}
+.pcard .thumb{display:block;aspect-ratio:16/10;overflow:hidden;border-bottom:1px solid var(--line);background:#fff}
+.pcard .thumb img{width:100%;height:100%;object-fit:cover;object-position:left top}
+.pcard .pbody{padding:20px 22px 22px;display:flex;flex-direction:column;flex:1}
+.pcard h3{font-size:24px}
+.pcard h3 a{color:var(--ink);text-decoration:none}
+.pcard h3 a:hover{color:var(--petrol)}
+.pcard h3 + p{margin:10px 0 0;font-size:16px}
+.pcard ul.plain{font-size:15.5px;margin-bottom:18px}
+.pcard ul.plain li{margin-bottom:5px}
+.pcard .more{margin-top:auto;text-decoration:none}
+.pcard .more:hover{text-decoration:underline}
+@media (max-width:900px){.pcards{grid-template-columns:1fr}.pcard .thumb{aspect-ratio:16/8}}
+
+.sub{margin:44px 0 16px}
+.sub0{font-size:24px;margin-bottom:18px}
+.inds{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}
+.inds li{background:var(--paper);border:1px solid var(--line);border-radius:8px;padding:16px 18px;display:flex;flex-direction:column;gap:6px}
+.inds b{font-size:17px;line-height:1.25}
+.inds span{font-size:15px;color:#2B3B43;line-height:1.4}
+.inds em{font-style:normal;font-size:13px;font-weight:600;color:var(--ok);background:var(--ok-bg);border-radius:999px;padding:3px 10px;align-self:flex-start;margin-top:auto}
+@media (max-width:900px){.inds{grid-template-columns:1fr 1fr}}
+@media (max-width:600px){.inds{grid-template-columns:1fr}}
+
+.ocards{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.ocard{display:flex;flex-direction:column;gap:4px;background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:16px 18px;text-decoration:none;color:var(--ink)}
+.ocard:hover{border-color:var(--petrol);color:var(--ink)}
+.ocard .tag{margin:0}
+.ocard b{font-size:19px}
+.ocard span:last-child{font-size:15px;color:#2B3B43}
+@media (max-width:700px){.ocards{grid-template-columns:1fr}}
+
+.ways{display:flex;flex-wrap:wrap;align-items:center;gap:14px 28px;margin-top:18px}
+.btn.tgbig{display:inline-flex;align-items:center;gap:10px;background:#E0A526;border-color:#E0A526;color:#14222A;font-size:18px;padding:15px 24px}
+.btn.tgbig:hover{background:#F5D27A;border-color:#F5D27A;color:#14222A}
+.contact .mail{margin-top:0;font-size:clamp(20px,2.6vw,28px)}
+@media (max-width:860px){
+  .nav{font-size:15px;gap:4px 16px}
+}
+@media (max-width:600px){.nav a[href="#svyaz"]{display:none}}
