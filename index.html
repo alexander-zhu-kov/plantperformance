@@ -15,7 +15,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Golos+Text:wght@400;500;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="assets/site.css">
+<link rel="stylesheet" href="assets/site.css?v=16899bdc">
 </head>
 <body>
 <header class="top"><div class="wrap">
@@ -27,14 +27,14 @@
 <div class="hv-grid">
 <h1>Отклонение от плана должно заканчиваться действием</h1>
 <div class="hv-player">
-<div class="frame pl"><video id="pv" controls muted autoplay playsinline preload="metadata" poster="video/poster.webp" src="video/zavod-v-cifrah-60s.mp4">Ваш браузер не показывает видео. <a href="video/zavod-v-cifrah-60s.mp4">Скачать ролик</a>.</video>
-<button type="button" class="snd" id="snd" hidden>🔊 Включить звук</button></div>
+<div class="frame pl"><video id="pv" controls muted autoplay playsinline preload="metadata" poster="video/poster-50s.webp" src="video/zavod-v-cifrah-50s.mp4">Ваш браузер не показывает видео. <a href="video/zavod-v-cifrah-50s.mp4">Скачать ролик</a>.</video>
+<button type="button" class="snd" id="snd" >🔊 Включить звук</button></div>
 <ol class="clips" id="clips">
-<li><button type="button" aria-current="true" data-src="video/zavod-v-cifrah-60s.mp4" data-poster="video/poster.webp"><i>1</i><span><b>Программа за 60 секунд</b><em>От файлов Excel до совещания по показателям · 1:00</em></span></button></li>
+<li><button type="button" aria-current="true" data-src="video/zavod-v-cifrah-50s.mp4" data-poster="video/poster-50s.webp"><i>1</i><span><b>Программа за 50 секунд</b><em>От файлов Excel до причины, ответственного и срока · 0:50</em></span></button></li>
 <li><button type="button" aria-current="false" data-src="video/zavod-pnl-riski.mp4" data-poster="video/poster-pnl-riski.webp"><i>2</i><span><b>P&amp;L и оценка рисков</b><em>ИИ-отчёт по прибылям и убыткам и рискам плана · 0:51</em></span></button></li>
 <li><button type="button" aria-current="false" data-src="video/zavod-ii-otchet.mp4" data-poster="video/poster-ii-otchet.webp"><i>3</i><span><b>Отчёт для директора за минуту</b><em>ИИ пишет текст для планёрки, числа считает программа · 1:33</em></span></button></li>
 </ol>
-<p class="chain-cap">Без озвучки, с титрами. Условные данные. Ролики идут подряд.</p>
+<p class="chain-cap">Условные данные. Ролики идут подряд.</p>
 </div>
 <p class="lead">Две программы и комплекты документов для управления заводом: показывают, где завод отстаёт от цели, и ведут каждое отклонение до причины, ответственного и результата.</p>
 <div class="actions"><a class="btn primary" href="#skachat">Скачать презентацию и документы</a><a class="btn ghost" href="zavod-v-cifrah/">О программе «Завод в цифрах»</a></div>
@@ -125,7 +125,7 @@
 <h3 style="margin-bottom:14px">Программы</h3>
 <ul class="files">
 <li><span class="t">Презентация Plant Performance<span class="d">PDF, 9 слайдов: обе программы и комплекты документов</span></span><a class="dl" href="files/plant-performance-prezentaciya.pdf" download>Скачать PDF</a></li>
-<li><span class="t">Ролик «Завод в цифрах»<span class="d">MP4, 60 секунд, без звука можно смотреть — титры на экране</span></span><a class="dl" href="video/zavod-v-cifrah-60s.mp4" download>Скачать MP4</a></li>
+<li><span class="t">Ролик «Завод в цифрах»<span class="d">MP4, 50 секунд, титры на экране</span></span><a class="dl" href="video/zavod-v-cifrah-50s.mp4" download>Скачать MP4</a></li>
 <li><span class="t">Ролик «ИИ-ассистент: P&amp;L и риски»<span class="d">MP4, 51 секунда, условные данные</span></span><a class="dl" href="video/zavod-pnl-riski.mp4" download>Скачать MP4</a></li>
 <li><span class="t">Ролик «ИИ-ассистент: отчёт для директора»<span class="d">MP4, 93 секунды, условные данные</span></span><a class="dl" href="video/zavod-ii-otchet.mp4" download>Скачать MP4</a></li>
 </ul>
@@ -147,13 +147,12 @@
 var b=[].slice.call(document.querySelectorAll('#clips button')),snd=document.getElementById('snd'),i=0;
 function mark(){b.forEach(function(x,k){x.setAttribute('aria-current',k===i?'true':'false')});}
 function go(n,user){i=n;var c=b[n];v.poster=c.getAttribute('data-poster');v.src=c.getAttribute('data-src');mark();
- if(user){v.muted=false;}
  var p=v.play();if(p&&p.catch)p.catch(function(){});}
 b.forEach(function(x,k){x.addEventListener('click',function(){go(k,true);});});
 v.addEventListener('ended',function(){if(i<b.length-1){go(i+1,false);}});
-function upd(){if(snd)snd.hidden=!(v.muted&&!v.paused);}
+function upd(){if(snd)snd.hidden=!(v.muted||v.volume===0);}
 v.addEventListener('play',upd);v.addEventListener('pause',upd);v.addEventListener('volumechange',upd);
-if(snd)snd.addEventListener('click',function(){v.muted=false;upd();});
+if(snd)snd.addEventListener('click',function(){v.muted=false;if(v.volume===0)v.volume=1;upd();var p=v.play();if(p&&p.catch)p.catch(function(){});});upd();
 [].forEach.call(document.querySelectorAll('[data-clip]'),function(el){el.addEventListener('click',function(){
  var n=parseInt(el.getAttribute('data-clip'),10);go(n,true);v.scrollIntoView({behavior:'smooth',block:'center'});});});
 })();
