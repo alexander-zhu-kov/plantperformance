@@ -272,3 +272,37 @@ footer .wrap{display:block}
 .fnote{display:flex;justify-content:space-between;gap:8px 24px;flex-wrap:wrap;margin-top:28px;padding-top:18px;border-top:1px solid var(--line)}
 @media (max-width:600px){.fways{width:100%}.fways .btn{width:100%;justify-content:center}}
 @media (max-width:600px){.fways .btn{font-size:15px;padding:13px 12px;white-space:nowrap}}
+
+
+/* 16.10: SEO-подзаголовки в H1 и телефон «Позвонить» */
+.kicker{display:block;font-size:14px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:var(--petrol);margin:0 0 14px;line-height:1.35}
+.hero h1.h1x{max-width:22ch}
+.h1sub{display:block;font-size:.42em;font-weight:500;letter-spacing:-.01em;color:var(--muted,#4B5A63);margin-top:10px;line-height:1.25}
+.nav a.call{display:inline-flex;align-items:center;gap:6px;font-weight:600;color:var(--petrol);border:1.5px solid var(--petrol);padding:5px 13px;border-radius:999px}
+.nav a.call:hover{background:var(--petrol);color:#fff}
+.nav a.call .ph-short{display:none}
+.btn.callbig{display:inline-flex;align-items:center;gap:10px;background:transparent;border:2px solid #fff;color:#fff;font-size:18px;padding:13px 22px}
+.btn.callbig:hover{background:#fff;color:#14222A}
+.callbtn{display:inline-flex;align-items:center;gap:8px}
+.mbar{display:none}
+@media (max-width:600px){
+  .nav a.call .ph-full{display:none}.nav a.call .ph-short{display:inline}
+  .btn.callbig{width:100%;justify-content:center;font-size:16px}
+  .mbar{display:grid;grid-template-columns:1fr 1fr;gap:8px;position:fixed;left:0;right:0;bottom:0;z-index:50;padding:8px 12px calc(8px + env(safe-area-inset-bottom));background:var(--surface,#fff);border-top:1px solid var(--line,#ddd);box-shadow:0 -4px 16px rgba(0,0,0,.08)}
+  .mbar a{display:flex;align-items:center;justify-content:center;gap:8px;padding:12px 8px;border-radius:10px;font-weight:600;font-size:16px;text-decoration:none}
+  .mbar .mcall{background:#E0A526;color:#14222A}
+  .mbar .mtg{background:var(--petrol);color:#fff}
+  body{padding-bottom:76px}
+}
+/* «Связаться» в меню больше не нужен: рядом телефон и Telegram; на телефоне обе кнопки — в нижней плашке */
+.nav a[href="#svyaz"]{display:none}
+.top .nav{gap:4px 18px}
+@media (max-width:600px){.nav a.call,.nav a.tg{display:none}}
+@media (max-width:1360px){.top .nav{gap:4px 16px}.nav a.call .ph-full{display:none}.nav a.call .ph-short{display:inline}}
+/* 16.10: страница бесплатного образца */
+ol.steps{margin:18px 0 0;padding:0 0 0 22px;max-width:74ch}
+ol.steps li{margin:0 0 12px;padding-left:4px}
+ol.steps li::marker{color:var(--petrol);font-weight:700}
+.files .d a{font-weight:500}
+.obrnote{max-width:66ch;margin-top:20px;padding:14px 18px;background:#FBF3DD;border:1px solid #EBD189;border-left:4px solid #E0A526;border-radius:10px;font-size:15.5px;line-height:1.5}
+.obrnote p{margin:0}.obrnote p+p{margin-top:6px}
