@@ -306,3 +306,17 @@ ol.steps li::marker{color:var(--petrol);font-weight:700}
 .files .d a{font-weight:500}
 .obrnote{max-width:66ch;margin-top:20px;padding:14px 18px;background:#FBF3DD;border:1px solid #EBD189;border-left:4px solid #E0A526;border-radius:10px;font-size:15.5px;line-height:1.5}
 .obrnote p{margin:0}.obrnote p+p{margin-top:6px}
+
+/* 16.10: плашка cookie (Яндекс Метрика) и страница политики */
+.cookie{position:fixed;left:16px;right:16px;bottom:16px;z-index:60;max-width:760px;margin:0 auto;display:flex;gap:12px 20px;align-items:center;justify-content:space-between;flex-wrap:wrap;
+  background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:14px 18px;box-shadow:0 10px 30px rgba(0,0,0,.18);font-size:15px;line-height:1.45}
+.cookie[hidden]{display:none}
+.cookie p{margin:0;flex:1 1 320px}
+.cookie .cbtns{display:flex;gap:8px;flex-wrap:wrap}
+.cookie .btn{padding:9px 16px;font-size:15px}
+@media (max-width:600px){.cookie{bottom:calc(80px + env(safe-area-inset-bottom));left:12px;right:12px}}
+.fnote a{color:inherit}
+.policy{max-width:72ch}
+.policy h2{font-size:21px;margin:30px 0 8px}
+.policy h2:first-child{margin-top:0}
+.policy p{margin:0 0 10px;line-height:1.6}
