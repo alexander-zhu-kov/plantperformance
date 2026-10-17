@@ -325,3 +325,19 @@ ol.steps li::marker{color:var(--petrol);font-weight:700}
 .policy h2{font-size:21px;margin:30px 0 8px}
 .policy h2:first-child{margin-top:0}
 .policy p{margin:0 0 10px;line-height:1.6}
+
+/* 17.10: ролик «Утренняя сводка ИИ» — следующий этап (макет) */
+.nextstep{margin-top:32px;padding:22px 24px;border:1.5px dashed #C9B26A;border-radius:12px;background:#FBF7EA}
+.nextstep h3{margin:6px 0 10px}
+.nextstep p{max-width:72ch}
+.nextstep .actions{margin-top:16px}
+.soon-tag{color:#8A6A12}
+.ns-cols{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,1fr);gap:24px;align-items:start;margin-top:8px}
+.ns-cols figure{margin:0}
+.ns-cols figcaption{margin-top:8px;font-size:15px;line-height:1.4}
+.ns-cols figcaption span{display:block;color:var(--muted);font-size:14px;margin-top:2px}
+.ns-cols ul.plain{margin:0}
+@media (max-width:760px){.ns-cols{grid-template-columns:minmax(0,1fr)}.nextstep{padding:18px 16px}}
+.clips button.soon{border-style:dashed}
+.clips button.soon i{background:#E0A526;color:#14222A}
+.clips small{display:inline-block;margin-left:6px;padding:1px 7px;border-radius:999px;background:#FBF3DD;border:1px solid #EBD189;color:#8A6A12;font-size:12px;font-weight:600;vertical-align:2px}
