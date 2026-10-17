@@ -341,3 +341,43 @@ ol.steps li::marker{color:var(--petrol);font-weight:700}
 .clips button.soon{border-style:dashed}
 .clips button.soon i{background:#E0A526;color:#14222A}
 .clips small{display:inline-block;margin-left:6px;padding:1px 7px;border-radius:999px;background:#FBF3DD;border:1px solid #EBD189;color:#8A6A12;font-size:12px;font-weight:600;vertical-align:2px}
+
+/* 17.10: шапка закреплена сверху; на узком экране меню под кнопкой; кнопка «Наверх» */
+.top{position:sticky;top:0;z-index:45;transition:box-shadow .2s}
+.top.scrolled{box-shadow:0 2px 14px rgba(20,34,42,.10)}
+html{scroll-padding-top:84px}
+.menu-btn{display:none}
+.nav a.nav-home{display:none}
+@media (max-width:1100px){
+  html{scroll-padding-top:72px}
+  .top .wrap{flex-wrap:nowrap;padding-top:10px;padding-bottom:10px;position:relative}
+  .menu-btn{display:inline-flex;align-items:center;gap:8px;font:inherit;font-weight:600;font-size:16px;color:var(--ink);background:var(--paper);border:1px solid var(--line);border-radius:999px;padding:8px 16px;cursor:pointer}
+  .menu-btn .m-close{display:none}
+  .top.open .menu-btn .m-open{display:none}
+  .top.open .menu-btn .m-close{display:inline}
+  .top .nav{display:none;position:absolute;left:0;right:0;top:100%;flex-direction:column;align-items:stretch;gap:0;flex-wrap:nowrap;
+    background:var(--surface);border-top:1px solid var(--line);border-bottom:1px solid var(--line);box-shadow:0 14px 28px rgba(20,34,42,.14);
+    padding:4px 24px 18px;max-height:calc(100vh - 64px);overflow-y:auto;font-size:17px}
+  .top.open .nav{display:flex}
+  .top .nav a{padding:13px 2px;border-bottom:1px solid var(--line)}
+  .top .nav a.nav-home{display:block}
+  .top .nav a[aria-current=page]{color:var(--petrol);font-weight:600;border-bottom-color:var(--line)}
+  .top .nav a[aria-current=page]::before{content:"● ";font-size:.7em;vertical-align:.15em}
+  .top .nav a.call,.top .nav a.tg{justify-content:center;margin-top:12px;padding:12px;border-radius:10px;border-bottom:0}
+  .top .nav a.call{border:1.5px solid var(--petrol)}
+  .top .nav a.call .ph-full{display:inline}.top .nav a.call .ph-short{display:none}
+}
+@media (max-width:600px){
+  .top .wrap{padding-left:16px;padding-right:16px}
+  .top .nav{padding-left:16px;padding-right:16px}
+  .top .nav a.call,.top .nav a.tg{display:none}
+}
+.totop{position:fixed;right:20px;bottom:20px;z-index:44;width:48px;height:48px;border-radius:50%;display:flex;align-items:center;justify-content:center;
+  background:var(--petrol);color:#fff;text-decoration:none;font-size:22px;font-weight:700;line-height:1;box-shadow:0 6px 18px rgba(0,0,0,.2);
+  opacity:0;visibility:hidden;transform:translateY(8px);transition:opacity .2s,transform .2s,visibility .2s}
+.totop.show{opacity:1;visibility:visible;transform:none}
+.totop:hover{background:var(--petrol-dark);color:#fff}
+@media (max-width:600px){.totop{right:14px;bottom:calc(88px + env(safe-area-inset-bottom))}}
+/* в шапке компьютера — «Позвонить» (полный номер не помещается в одну строку); в меню телефона — полный номер */
+@media (min-width:0){.top .nav a.call .ph-full{display:none}.top .nav a.call .ph-short{display:inline}}
+@media (max-width:1100px){.top .nav a.call .ph-full{display:inline}.top .nav a.call .ph-short{display:none}}
