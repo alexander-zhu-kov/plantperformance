@@ -1,3 +1,8 @@
+/* 17.10: шрифт Golos Text лежит на сайте (assets/fonts), без Google Fonts */
+@font-face{font-family:"Golos Text";font-style:normal;font-weight:400;font-display:swap;src:url("fonts/golos-text-400.woff2") format("woff2")}
+@font-face{font-family:"Golos Text";font-style:normal;font-weight:500;font-display:swap;src:url("fonts/golos-text-500.woff2") format("woff2")}
+@font-face{font-family:"Golos Text";font-style:normal;font-weight:600;font-display:swap;src:url("fonts/golos-text-600.woff2") format("woff2")}
+@font-face{font-family:"Golos Text";font-style:normal;font-weight:700;font-display:swap;src:url("fonts/golos-text-700.woff2") format("woff2")}
 :root{
   --paper:#F2F4F3; --surface:#FFFFFF; --ink:#14222A; --muted:#55666E; --line:#D3DAD9;
   --petrol:#0D4958; --petrol-dark:#08333E;
