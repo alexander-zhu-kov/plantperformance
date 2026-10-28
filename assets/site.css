@@ -478,3 +478,8 @@ details.mfold[open] > summary::after{content:"↑"}
   .dlcard details.mfold > summary{margin-top:6px}
 }
 .steps3 b.free{display:inline;font-size:inherit;margin:0;color:var(--ok)}
+
+/* 17.10: страница «Простои по QR» — квадратный ролик */
+.qrvid{margin:0;max-width:440px;justify-self:center}
+.qrvid video{width:100%;aspect-ratio:1/1;background:#0b1a20}
+.qrvid figcaption{margin-top:8px}
