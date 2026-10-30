@@ -348,7 +348,7 @@ ol.steps li::marker{color:var(--petrol);font-weight:700}
 html{scroll-padding-top:84px}
 .menu-btn{display:none}
 .nav a.nav-home{display:none}
-@media (max-width:1100px){
+@media (max-width:1259px){
   html{scroll-padding-top:72px}
   .top .wrap{flex-wrap:nowrap;padding-top:10px;padding-bottom:10px;position:relative}
   .menu-btn{display:inline-flex;align-items:center;gap:8px;font:inherit;font-weight:600;font-size:16px;color:var(--ink);background:var(--paper);border:1px solid var(--line);border-radius:999px;padding:8px 16px;cursor:pointer}
@@ -380,7 +380,7 @@ html{scroll-padding-top:84px}
 @media (max-width:600px){.totop{right:14px;bottom:calc(88px + env(safe-area-inset-bottom))}}
 /* в шапке компьютера — «Позвонить» (полный номер не помещается в одну строку); в меню телефона — полный номер */
 @media (min-width:0){.top .nav a.call .ph-full{display:none}.top .nav a.call .ph-short{display:inline}}
-@media (max-width:1100px){.top .nav a.call .ph-full{display:inline}.top .nav a.call .ph-short{display:none}}
+@media (max-width:1259px){.top .nav a.call .ph-full{display:inline}.top .nav a.call .ph-short{display:none}}
 
 /* 17.10: первый шаг, пример, вопросы, калькулятор, «Скачать» карточками, сворачивание на телефоне */
 .hv-grid{grid-template-rows:auto auto auto 1fr}
@@ -483,3 +483,59 @@ details.mfold[open] > summary::after{content:"↑"}
 .qrvid{margin:0;max-width:440px;justify-self:center}
 .qrvid video{width:100%;aspect-ratio:1/1;background:#0b1a20}
 .qrvid figcaption{margin-top:8px}
+
+/* 30.10: «Бережливый завод», два плеера (продукты / ИИ), правки для телефона */
+.pcards.four{grid-template-columns:repeat(2,minmax(0,1fr));gap:24px}
+.pcards.four .pcard .thumb{aspect-ratio:16/8}
+@media (max-width:900px){.pcards.four{grid-template-columns:1fr}}
+.ocards{grid-template-columns:repeat(auto-fit,minmax(240px,1fr))}
+.clips .ct{flex:1;min-width:0}
+.clips .cd{flex:none;font-size:14px;font-weight:600;color:var(--muted);font-variant-numeric:tabular-nums}
+.clips .cl-sep{font-size:12.5px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--petrol);margin:6px 0 -2px}
+.clips .cl-sep:first-child{margin-top:0}
+.clips .cl-sep.soon{color:#8A6A12;margin-top:10px}
+.ai-split{display:grid;grid-template-columns:minmax(0,7fr) minmax(0,5fr);gap:28px;align-items:start}
+.ai-split .aigrid{grid-template-columns:1fr;gap:14px}
+@media (max-width:900px){.ai-split{grid-template-columns:minmax(0,1fr);gap:22px}}
+.ns2{display:grid;grid-template-columns:1fr 1fr;gap:22px;margin-top:6px}
+.ns2 h4{margin:0 0 6px;font-size:17px}
+.ns2 p{margin:0;font-size:15.5px;color:#2B3B43}
+@media (max-width:760px){.ns2{grid-template-columns:1fr}}
+.bzc .step{font-weight:700}
+#ii details.mfold{margin-top:8px}
+@media (min-width:861px){#ii details.mfold{margin-top:0}}
+
+@media (max-width:600px){
+  body{font-size:16.5px}
+  .wrap{padding-left:20px;padding-right:20px}
+  section{padding:52px 0}
+  section.tight{padding:40px 0}
+  .head{margin-bottom:22px}
+  h2{font-size:25px;line-height:1.18}
+  .lead{font-size:17px;line-height:1.5}
+  .hero{padding:32px 0 40px}
+  /* плеер — с полями по краям, как остальная страница */
+  .hv-player .frame.pl{margin-left:0;margin-right:0;border-radius:12px;border:1px solid var(--line)}
+  .hv-player{margin-top:24px}
+  .hv-grid > .lead{margin-top:20px}
+  .clips{gap:8px;margin-top:14px}
+  .clips button{min-height:50px;padding:10px 12px;border-radius:10px}
+  .clips em{display:none}
+  .clips b{font-size:15.5px}
+  .clips i{width:28px;height:28px;font-size:14px}
+  .chain-cap{font-size:13.5px;line-height:1.45}
+  .pcards,.pcards.four{gap:18px}
+  .pcard .pbody{padding:16px 18px 18px}
+  .pcard h3{font-size:22px}
+  .facts > div{padding:16px 0}
+  .aigrid > div{padding:16px 18px}
+  .inds li{padding:14px 16px}
+  .nextstep{padding:16px 14px}
+  .faq summary{font-size:16.5px}
+  .actions{gap:10px}
+}
+/* 30.10: в меню шесть разделов — шапке компьютера нужно больше места; уже 1260 px — меню под кнопкой */
+@media (min-width:1260px){.top .wrap{max-width:1280px}}
+/* кнопка «Смотреть» — ниже середины кадра, чтобы не закрывать заголовок постера */
+.pbig{top:auto;bottom:11%;transform:translateX(-50%)}
+@media (max-width:600px){.kicker{font-size:12.5px;letter-spacing:.03em;line-height:1.4}.pbig{bottom:8%}}
